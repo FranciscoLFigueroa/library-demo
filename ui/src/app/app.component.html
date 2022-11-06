@@ -1,0 +1,16 @@
+<div>
+  <tabset>
+    <tab>
+      <ng-template tabHeading>
+        <i><b>Books List</b></i>
+      </ng-template>
+      <app-books-component *ngFor="let item of bookdata" [Inputdata]="item" [Statusdata]="0"></app-books-component>
+    </tab>
+    <tab>
+      <ng-template tabHeading>
+        <i><b>Books Wishlist</b></i>
+      </ng-template>
+      <app-books-component *ngFor="let item of bookdata" [Inputdata]="item" [Statusdata]="1"></app-books-component>
+    </tab>
+  </tabset>
+</div>
