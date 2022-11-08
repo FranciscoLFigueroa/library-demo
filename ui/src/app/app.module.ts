@@ -9,6 +9,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import { BooksComponentComponent } from './components/books-component/books-component.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { BooksComponentComponent } from './components/books-component/books-comp
     BrowserModule,
     AlertModule.forRoot(),
     SortableModule.forRoot(),
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,12 @@
-<div class="row" *ngIf="Inputdata.wishlist==Statusdata"> wishlist
-  <div class="col-xs-6 col-6 col-md-5 col-lg-3">
+<div>
+  <div class="padding-sides col-xs-12 col-12 col-md-12 col-lg-12">
     {{Inputdata.name}}
   </div>
-  <div class="col-xs-6 col-6 col-md-5 col-lg-3">
-    {{Inputdata.date}}
-  </div>
   <div class="col-xs-12 col-12 col-md-12 col-lg-12">
-    {{Inputdata.description}}
+    {{Inputdata.author}}
   </div>
+  <button (click)="updateBook()">Update</button>
+  <!-- <div class="col-xs-12 col-12 col-md-12 col-lg-12">
+    {{Inputdata.description}}
+  </div> -->
 </div>
