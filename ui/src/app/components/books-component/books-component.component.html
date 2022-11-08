@@ -1,12 +1,15 @@
-<div>
-  <div class="padding-sides col-xs-12 col-12 col-md-12 col-lg-12">
-    {{Inputdata.name}}
+<div class="center-text">
+  <div class="internal-border">
+    <img class="image-book" src="assets/images/book.png" alt="Book Image">
+    <div class="padding-sides title-book col-xs-12 col-12 col-md-12 col-lg-12">
+      {{Inputdata.name}}
+    </div>
+    <div class="padding-sides author-book col-xs-12 col-12 col-md-12 col-lg-12">
+      {{Inputdata.author}}
+    </div>
+    <button (click)="updateBook()" type="button" [ngClass]="(Inputdata.whishlist==false)?'wishlist-book':'list-book'" class="btn btn-primary btn-lg btn-block mt-3">
+      <!-- Wishlist -->
+      {{Inputdata.whishlist==false ? 'Add wishlist' : 'Remove wishlist'}}
+    </button>
   </div>
-  <div class="col-xs-12 col-12 col-md-12 col-lg-12">
-    {{Inputdata.author}}
-  </div>
-  <button (click)="updateBook()">Update</button>
-  <!-- <div class="col-xs-12 col-12 col-md-12 col-lg-12">
-    {{Inputdata.description}}
-  </div> -->
 </div>

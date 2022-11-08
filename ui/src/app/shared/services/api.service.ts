@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   putBook(book:any) {
-    // console.log("put", book);
-    return this.http.put<any>(`${environment.apiurl}Bookslists/${book.id}`,book)
+    console.log("put", book);
+    return this.http.put<any>(`${environment.apiurl}Bookslists/${book.id}`,book).subscribe(data=>{console.log(data)})
   }
 }

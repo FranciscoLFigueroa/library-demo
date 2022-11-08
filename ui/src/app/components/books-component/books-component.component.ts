@@ -16,7 +16,7 @@ export class BooksComponentComponent implements OnChanges {
   }
 
   ngOnInit(): void {
-    console.log(this.Inputdata)
+    // console.log(this.Inputdata)
     // console.log(this.Statusdata)
   }
 
