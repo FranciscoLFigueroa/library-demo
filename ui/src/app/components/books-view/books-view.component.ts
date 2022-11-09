@@ -1,13 +1,12 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { ApiService } from 'src/app/shared/services/api.service';
+import { outputAst } from '@angular/compiler';
 
 @Component({
-  selector: 'app-books-component',
-  templateUrl: './books-component.component.html',
-  styleUrls: ['./books-component.component.scss']
+  selector: 'app-books-view',
+  templateUrl: './books-view.component.html',
+  styleUrls: ['./books-view.component.css']
 })
-export class BooksComponentComponent implements OnChanges {
+export class BooksViewComponent implements OnInit {
 
   constructor() { }
 
@@ -23,9 +22,7 @@ export class BooksComponentComponent implements OnChanges {
   @Input() Inputdata:any;
   @Output() Update: EventEmitter<any> = new EventEmitter();
 
-  updateBook() {
+  updateBookWishlistEvent() {
     this.Update.emit(this.Inputdata);
   }
-  // @Input() Statusdata:any;
-
 }

@@ -1,33 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ApiService } from './shared/services/api.service'
 import { TabsetComponent } from 'ngx-bootstrap/tabs';
-import { ApiService } from './shared/services/api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'library-demo';
+  title = 'ui';
   bookdata:any[] = [];
-  // bookdata = [{
-  //   name: "El evangelio del mal",
-  //   date: "06/11/2022 1:40 AM",
-  //   description: "Libro de terror",
-  //   wishlist: "0"
-  // },
-  // {
-  //   name: "Nisemonogatari",
-  //   date: "06/11/2019 1:40 AM",
-  //   description: "Libro de anime",
-  //   wishlist: "1"
-  // }]
 
   constructor(private serviceApi:ApiService) { }
 
   ngOnInit(): void {
-    this.serviceApi.getBook().subscribe(data=>{
-      // console.log(data)
+    this.serviceApi.getBookList().subscribe(data=>{
+      console.log(data)
       this.bookdata = data;
     })
   }
@@ -55,7 +43,7 @@ export class AppComponent implements OnInit {
     this.bookdata.find(x=> { 
       if(x.id == event.id) {
         x.whishlist = !event.whishlist;
-        this.serviceApi.putBook(x);
+        this.serviceApi.putBookWishlist(x);
       }
     });
   }

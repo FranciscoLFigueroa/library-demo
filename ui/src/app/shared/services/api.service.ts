@@ -1,21 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
+export interface BookData {
+  id: number
+  name: string
+  author: string
+  whishlist: boolean
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  getBook():Observable<any[]> {
-    return this.http.get<any[]>(`${environment.apiurl}Bookslists`)
+  getBookList():Observable<BookData[]> {
+    // return this.http.get<BookData[]>(`${environment.apiurl}Bookslists`)
+
+    let apiObserverable = this.http.get<BookData[]>(`${environment.apiurl}/Bookslists`);
+
+    return apiObserverable.pipe(catchError(error => of<BookData[]>([])));
   }
 
-  putBook(book:any) {
-    console.log("put", book);
-    return this.http.put<any>(`${environment.apiurl}Bookslists/${book.id}`,book).subscribe(data=>{console.log(data)})
+  putBookWishlist(book:BookData) {
+    return this.http.put<BookData>(`${environment.apiurl}/Bookslists/${book.id}`,book).subscribe(data=>{
+      console.log(data)
+    })
   }
 }

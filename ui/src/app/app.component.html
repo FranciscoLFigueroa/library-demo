@@ -6,7 +6,7 @@
           <i><b>Books List</b></i>
         </ng-template>
         <div class="row" *ngIf="bookdata.length > 0">
-          <app-books-component *ngFor="let item of filterbook(bookdata, false)" [Inputdata]="item" (Update)="updatingBook($event)" class="col-xs-3 col-3 col-md-3 col-lg-3"></app-books-component>
+          <app-books-view *ngFor="let item of filterbook(bookdata, false)" [Inputdata]="item" (Update)="updatingBook($event)" class="col-xs-3 col-3 col-md-3 col-lg-3"></app-books-view>
         </div>
       </tab>
       <tab>
@@ -14,7 +14,7 @@
           <i><b>Books Wishlist</b></i>
         </ng-template>
         <div class="row" *ngIf="bookdata.length > 0">
-          <app-books-component *ngFor="let item of filterbook(bookdata, true)" [Inputdata]="item" (Update)="updatingBook($event)" class="col-xs-3 col-3 col-md-3 col-lg-3"></app-books-component>
+          <app-books-view *ngFor="let item of filterbook(bookdata, true)" [Inputdata]="item" (Update)="updatingBook($event)" class="col-xs-3 col-3 col-md-3 col-lg-3"></app-books-view>
         </div>
       </tab>
     </tabset>
