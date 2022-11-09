@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   filterbook(data:any[], bool:boolean) {
     // console.log("data", data);
     const x = data.filter(dt => {
-      return dt.whishlist == bool;
+      return dt.wishlist == bool;
     });
     // console.log(x);
     return x;
@@ -39,10 +39,10 @@ export class AppComponent implements OnInit {
 
   updatingBook(event:any) {
     console.log("event", event);
-    // event.whishlist = !event.whishlist;
+    // event.wishlist = !event.wishlist;
     this.bookdata.find(x=> { 
       if(x.id == event.id) {
-        x.whishlist = !event.whishlist;
+        x.wishlist = !event.wishlist;
         this.serviceApi.putBookWishlist(x);
       }
     });

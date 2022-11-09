@@ -26,7 +26,7 @@ describe('ApiService', () => {
         'id': 1,
         'name': 'book name',
         'author': 'author name',
-        'whishlist': false
+        'wishlist': false
       }
     ];
 

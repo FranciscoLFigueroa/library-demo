@@ -8,7 +8,7 @@ export interface BookData {
   id: number
   name: string
   author: string
-  whishlist: boolean
+  wishlist: boolean
 }
 
 describe('BooksViewComponent', () => {
@@ -27,7 +27,7 @@ describe('BooksViewComponent', () => {
       'id': 1,
       'name': 'book name',
       'author': 'author name',
-      'whishlist': false
+      'wishlist': false
     };
 
     fixture.detectChanges();

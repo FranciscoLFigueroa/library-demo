@@ -7,8 +7,8 @@
     <div class="padding-sides author-book col-xs-12 col-12 col-md-12 col-lg-12">
       {{Inputdata.author}}
     </div>
-    <button (click)="updateBookWishlistEvent()" type="button" [ngClass]="(Inputdata.whishlist==false)?'wishlist-book':'list-book'" class="btn btn-primary btn-lg btn-block mt-3">
-      {{Inputdata.whishlist==false ? 'Add wishlist' : 'Remove wishlist'}}
+    <button (click)="updateBookWishlistEvent()" type="button" [ngClass]="(Inputdata.wishlist==false)?'wishlist-book':'list-book'" class="btn btn-primary btn-lg btn-block mt-3">
+      {{Inputdata.wishlist==false ? 'Add wishlist' : 'Remove wishlist'}}
     </button>
   </div>
 </div>

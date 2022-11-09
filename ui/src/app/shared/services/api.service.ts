@@ -8,7 +8,7 @@ export interface BookData {
   id: number
   name: string
   author: string
-  whishlist: boolean
+  wishlist: boolean
 }
 
 @Injectable({

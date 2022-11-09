@@ -8,6 +8,6 @@ namespace Books.Models
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string Author { get; set; } = null!;
-        public bool Whishlist { get; set; }
+        public bool Wishlist { get; set; }
     }
 }
